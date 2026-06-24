@@ -3,518 +3,790 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="title" content="ScaleHP: Estimating Hand Pose in Metric Space">
+  <meta name="description" content="ScaleHP is a one-stage framework for metric-space hand pose estimation using a scale token and anthropometric bone proportions, achieving 35.8 CS-MPJPE on FreiHand.">
+  <meta name="keywords" content="Hand Pose Estimation, Metric Scale Learning, Morphological Prior, Camera Space, ScaleHP, computer vision">
+  <meta name="author" content="Ruitao Jing, Xingyu Chen, Hongyang Li, Qing Jiang, Yukai Shi, Lei Zhang">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:site_name" content="IDEA Research">
+  <meta property="og:title" content="ScaleHP: Estimating Hand Pose in Metric Space">
+  <meta property="og:description" content="One-stage metric-space hand pose estimation via a scale token that exploits anthropometric bone proportions.">
+  <meta property="og:url" content="https://laiang8086.github.io/scalehp">
+  <meta property="og:image" content="https://laiang8086.github.io/scalehp/static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="og:image:alt" content="ScaleHP - Metric Hand Pose Estimation">
+  <meta property="article:published_time" content="2026-01-01T00:00:00.000Z">
+  <meta property="article:author" content="Ruitao Jing">
   <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
+  <meta property="article:tag" content="Hand Pose Estimation">
+  <meta property="article:tag" content="Metric Scale Learning">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta name="twitter:title" content="ScaleHP: Estimating Hand Pose in Metric Space">
+  <meta name="twitter:description" content="One-stage metric-space hand pose estimation via a scale token and anthropometric priors.">
+  <meta name="twitter:image" content="https://laiang8086.github.io/scalehp/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="ScaleHP - Metric Hand Pose Estimation">
 
   <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
+  <meta name="citation_title" content="ScaleHP: Estimating Hand Pose in Metric Space">
+  <meta name="citation_author" content="Jing, Ruitao">
+  <meta name="citation_author" content="Chen, Xingyu">
+  <meta name="citation_author" content="Li, Hongyang">
+  <meta name="citation_author" content="Jiang, Qing">
+  <meta name="citation_author" content="Shi, Yukai">
+  <meta name="citation_author" content="Zhang, Lei">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_journal_title" content="arXiv preprint">
+
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
+  <title>ScaleHP: Estimating Hand Pose in Metric Space</title>
 
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
-  <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
-  <!-- Critical CSS - Load synchronously -->
+  <link rel="icon" type="image/png" href="static/images/favicon.png">
+  <link rel="apple-touch-icon" href="static/images/favicon.png">
+
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
+
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
+
   <noscript>
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
-  
-  <!-- Fonts - Optimized loading -->
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
+
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "headline": "ScaleHP: Estimating Hand Pose in Metric Space",
+    "description": "One-stage metric-space hand pose estimation via a scale token that exploits anthropometric bone proportions.",
     "author": [
-      {
-        "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      }
+      {"@type": "Person", "name": "Ruitao Jing", "affiliation": [{"@type": "Organization", "name": "Tsinghua University"}, {"@type": "Organization", "name": "Visincept"}, {"@type": "Organization", "name": "IDEA Research"}]},
+      {"@type": "Person", "name": "Xingyu Chen", "affiliation": {"@type": "Organization", "name": "Zhongguancun Academy"}},
+      {"@type": "Person", "name": "Hongyang Li", "affiliation": [{"@type": "Organization", "name": "IDEA Research"}, {"@type": "Organization", "name": "South China University of Technology"}]},
+      {"@type": "Person", "name": "Qing Jiang", "affiliation": [{"@type": "Organization", "name": "IDEA Research"}, {"@type": "Organization", "name": "South China University of Technology"}]},
+      {"@type": "Person", "name": "Yukai Shi", "affiliation": [{"@type": "Organization", "name": "Tsinghua University"}, {"@type": "Organization", "name": "IDEA Research"}]},
+      {"@type": "Person", "name": "Lei Zhang", "affiliation": [{"@type": "Organization", "name": "Visincept"}, {"@type": "Organization", "name": "IDEA Research"}, {"@type": "Organization", "name": "South China University of Technology"}]}
     ],
-    "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
-    },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
+    "datePublished": "2026-01-01",
+    "publisher": {"@type": "Organization", "name": "arXiv"},
+    "url": "https://laiang8086.github.io/scalehp",
+    "image": "https://laiang8086.github.io/scalehp/static/images/social_preview.png",
+    "keywords": ["Hand Pose Estimation", "Metric Scale Learning", "Morphological Prior"],
+    "abstract": "ScaleHP is an end-to-end one-stage framework for metric-space hand pose estimation that uses a scale token and anthropometric bone proportions to recover absolute hand scale without fragile depth modules.",
     "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
+    "license": "https://creativecommons.org/licenses/by/4.0/"
   }
   </script>
 </head>
 <body>
 
-
-  <!-- Scroll to Top Button -->
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">ScaleHP: Estimating Hand Pose in Metric Space</h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><a href="https://scholar.google.com/" target="_blank">Ruitao Jing</a><sup class="author-meta">1,3,4,*</sup>,</span>
+                <span class="author-block"><a href="https://scholar.google.com/" target="_blank">Xingyu Chen</a><sup class="author-meta">2,*</sup>,</span>
+                <span class="author-block"><a href="https://scholar.google.com/" target="_blank">Hongyang Li</a><sup class="author-meta">4,5</sup>,</span>
+                <span class="author-block"><a href="https://scholar.google.com/" target="_blank">Qing Jiang</a><sup class="author-meta">4,5</sup>,</span>
+                <span class="author-block"><a href="https://scholar.google.com/" target="_blank">Yukai Shi</a><sup class="author-meta">1,4</sup>,</span>
+                <span class="author-block"><a href="https://scholar.google.com/" target="_blank">Lei Zhang</a><sup class="author-meta">3,4,5,&dagger;</sup></span>
+              </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+              <div class="is-size-6 publication-affiliations">
+                <span class="affiliation-line"><sup>1</sup> Tsinghua University</span>
+                <span class="affiliation-line"><sup>2</sup> Zhongguancun Academy</span>
+                <span class="affiliation-line"><sup>3</sup> Visincept</span>
+                <span class="affiliation-line"><sup>4</sup> International Digital Economy Academy (IDEA Research)</span>
+                <span class="affiliation-line"><sup>5</sup> South China University of Technology</span>
+                <span class="affiliation-line">arXiv preprint</span>
+                <span class="eql-cntrb"><small><br><sup>*</sup>Equal contribution &nbsp; <sup>&dagger;</sup>Corresponding author</small></span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
+    <!-- Teaser -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <img src="static/images/teaser.png" alt="ScaleHP estimates hand pose in true metric space from a single image" loading="eager" class="teaser-image"/>
+          <h2 class="subtitle has-text-centered">
+            ScaleHP is the first one-stage framework to explicitly predict global hand scale, enabling accurate recovery of hand pose in true metric space from a single RGB image.
+          </h2>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+    </section>
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+    <!-- Abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Accurate metric-space hand pose estimation (HPE) is essential for immersive human-computer interaction and robotics. However, most existing methods predict poses in a root-relative coordinate system and cannot recover the hand at absolute metric scale. We observe that intrinsic proportional relationships among human hand bones encode stable anthropometric priors that correlate with overall hand size. Leveraging this insight, we present <strong>ScaleHP</strong>, an end-to-end one-stage framework that bypasses fragile extrinsic depth modules to recover the hand in metric space.
+              </p>
+              <p>
+                ScaleHP employs a transformer-based decoder with a novel <strong>scale token</strong> to fuse multi-scale morphological and appearance features. By solving for metric coordinates through a perspective-constrained least-squares approach, we achieve high-precision pose estimation in the camera coordinate system. ScaleHP delivers state-of-the-art performance, including <strong>35.8 CS-MPJPE</strong> on FreiHand and <strong>4.6 / 5.9 P-MPJPE</strong> on DexYCB and HO3Dv3, demonstrating that internal biological constraints significantly reduce both relative geometry and absolute metric errors.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
+    </section>
+
+    <!-- Motivation & Contributions -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3 has-text-centered">Motivation</h2>
+            <div class="content has-text-justified">
+              <p>
+                Precise hand tracking underpins VR/AR manipulation, embodied AI, and robotic teleoperation. Beyond relative finger articulation, these applications require knowing where the hand sits in 3D space and how large it is in real-world units. The core challenge is <strong>depth-scale ambiguity</strong> in monocular images: existing pipelines often rely on auxiliary depth modules or pre-computed depth maps, which become unreliable when only a hand is visible or when scenes differ from the training distribution.
+              </p>
+              <p>
+                ScaleHP instead exploits a stable biological prior: skeletal bone proportions are intrinsically correlated with overall hand dimensions. Because this scale cue comes from the hand itself, it remains robust to background changes and avoids the fragility of external depth estimation.
+              </p>
+            </div>
+
+            <h2 class="title is-3 has-text-centered" style="margin-top: 2.5rem;">Contributions</h2>
+            <div class="columns is-multiline contribution-cards">
+              <div class="column is-one-third">
+                <div class="contribution-card">
+                  <h3 class="title is-5">Metric-Aware HPE</h3>
+                  <p>We explicitly model global hand scale from intrinsic anatomical bone proportions, mitigating monocular depth ambiguity and enabling metrically consistent predictions in camera space.</p>
+                </div>
+              </div>
+              <div class="column is-one-third">
+                <div class="contribution-card">
+                  <h3 class="title is-5">One-Stage ScaleHP</h3>
+                  <p>We propose the first one-stage end-to-end framework for metric-space hand pose estimation, centered on a scale token that interacts with 2D and 3D joint queries inside the metric decoder.</p>
+                </div>
+              </div>
+              <div class="column is-one-third">
+                <div class="contribution-card">
+                  <h3 class="title is-5">SOTA Performance</h3>
+                  <p>ScaleHP achieves 35.8 CS-MPJPE on FreiHand and 4.6 / 5.9 P-MPJPE on DexYCB and HO3Dv3, with ablations showing the scale token also reduces depth-axis geometry error.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
+    </section>
 
+    <!-- Method -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Method</h2>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <figure class="method-figure">
+              <img src="static/images/pipeline2.png" alt="Overview of the ScaleHP framework" loading="lazy"/>
+              <figcaption class="has-text-centered is-size-6" style="margin-top: 0.75rem;">
+                <strong>Overview of ScaleHP.</strong> A frozen detector extracts hand features, a Metric 2D–3D Decoder with a scale token predicts 2D/3D joints and global scale, and an analytic module solves for translation to recover metric-space pose.
+              </figcaption>
+            </figure>
 
+            <div class="columns is-multiline method-blocks" style="margin-top: 2rem;">
+              <div class="column is-half">
+                <div class="method-block">
+                  <h3 class="title is-5"><span class="method-step">1</span> Frozen Detector</h3>
+                  <p>Grounding DINO provides robust hand detection and multi-scale image features while remaining frozen during training.</p>
+                </div>
+              </div>
+              <div class="column is-half">
+                <div class="method-block">
+                  <h3 class="title is-5"><span class="method-step">2</span> Metric 2D–3D Decoder</h3>
+                  <p>21 joint queries and a dedicated scale token interact via deformable attention to predict 2D keypoints, canonical 3D pose, and a global scale scalar.</p>
+                </div>
+              </div>
+              <div class="column is-half">
+                <div class="method-block">
+                  <h3 class="title is-5"><span class="method-step">3</span> Scale Token</h3>
+                  <p>The scale token fuses morphological and appearance cues to estimate mean bone length, grounding absolute hand size in anthropometric priors.</p>
+                </div>
+              </div>
+              <div class="column is-half">
+                <div class="method-block">
+                  <h3 class="title is-5"><span class="method-step">4</span> Analytic Translation Solver</h3>
+                  <p>A training-free least-squares solve under perspective projection constraints reconstructs the full hand pose in camera metric space without an auxiliary depth network.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Results -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Results</h2>
+        <p class="has-text-centered content is-size-6" style="max-width: 48rem; margin: 0 auto 2rem;">
+          CS-MPJPE directly measures 3D joint error in camera space without root or Procrustes alignment, making it the primary metric for absolute metric localization.
+        </p>
 
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
+        <div class="columns is-multiline stat-cards">
+          <div class="column is-one-third">
+            <div class="stat-card">
+              <div class="stat-value">35.8</div>
+              <div class="stat-label">CS-MPJPE on FreiHand (mm)</div>
+            </div>
+          </div>
+          <div class="column is-one-third">
+            <div class="stat-card">
+              <div class="stat-value">4.6</div>
+              <div class="stat-label">P-MPJPE on DexYCB (mm)</div>
+            </div>
+          </div>
+          <div class="column is-one-third">
+            <div class="stat-card">
+              <div class="stat-value">5.9</div>
+              <div class="stat-label">P-MPJPE on HO3Dv3 (mm)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered" style="margin-top: 2rem;">
+          <div class="column is-four-fifths">
+            <div class="table-container">
+              <table class="table is-fullwidth is-striped results-table">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>FreiHand CS-MPJPE &darr;</th>
+                    <th>DexYCB CS-MPJPE &darr;</th>
+                    <th>HO3Dv3 CS-MPJPE &darr;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>CMR + GS</td><td>48.8</td><td>183.2</td><td>152.3</td></tr>
+                  <tr><td>HandDGP + GS</td><td>46.2</td><td>222.1</td><td>132.6</td></tr>
+                  <tr><td>NFV</td><td>42.4</td><td>&mdash;</td><td>&mdash;</td></tr>
+                  <tr class="is-selected"><td><strong>ScaleHP (Ours)</strong></td><td><strong>35.8</strong></td><td><strong>136.3</strong></td><td><strong>50.7</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="title is-4 has-text-centered results-subheading">State-of-the-Art Comparison (Aligned Metrics)</h3>
+            <p class="has-text-centered content is-size-6" style="max-width: 48rem; margin: 0.75rem auto 1.5rem;">
+              Root-relative and Procrustes-aligned metrics focus on articulated pose quality rather than absolute metric localization. ScaleHP remains state-of-the-art under these conventional protocols while excelling at camera-space accuracy.
+            </p>
+            <div class="table-container is-scrollable">
+              <table class="table is-fullwidth is-striped results-table aligned-results-table">
+                <thead>
+                  <tr>
+                    <th rowspan="2">Method</th>
+                    <th colspan="2">FreiHand</th>
+                    <th colspan="2">DexYCB</th>
+                    <th>HO3Dv3</th>
+                  </tr>
+                  <tr>
+                    <th>CS-MPJPE &darr;</th>
+                    <th>P-MPJPE &darr;</th>
+                    <th>R-MPJPE &darr;</th>
+                    <th>P-MPJPE &darr;</th>
+                    <th>P-MPJPE &darr;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>ObMan</td><td>85.2</td><td>13.3</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+                  <tr><td>MANO CNN</td><td>71.3</td><td>11.0</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+                  <tr><td>CMR-PG</td><td>48.8</td><td>6.9</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+                  <tr><td>I2L-MeshNet</td><td>60.3</td><td>7.4</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+                  <tr><td>HandDGP</td><td>46.3</td><td>7.4</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+                  <tr><td>MobRecon</td><td>50.2</td><td>5.7</td><td>14.2</td><td>6.4</td><td>&mdash;</td></tr>
+                  <tr><td>METRO</td><td>&mdash;</td><td>6.7</td><td>15.2</td><td>7.0</td><td>&mdash;</td></tr>
+                  <tr><td>HandOccNet</td><td>&mdash;</td><td>&mdash;</td><td>14.0</td><td>5.8</td><td>&mdash;</td></tr>
+                  <tr><td>H2ONet</td><td>&mdash;</td><td>&mdash;</td><td>14.0</td><td>5.7</td><td>&mdash;</td></tr>
+                  <tr><td>Deformer</td><td>&mdash;</td><td>&mdash;</td><td>13.6</td><td>5.2</td><td>&mdash;</td></tr>
+                  <tr><td>Zhou et al.</td><td>&mdash;</td><td>&mdash;</td><td>12.4</td><td>5.5</td><td>&mdash;</td></tr>
+                  <tr><td>TI-Net</td><td>&mdash;</td><td>&mdash;</td><td>16.8</td><td>4.9</td><td>&mdash;</td></tr>
+                  <tr><td>MaskHand</td><td>&mdash;</td><td>5.5</td><td>11.7</td><td>5.0</td><td>7.0</td></tr>
+                  <tr><td>S<sup>2</sup>HAND</td><td>&mdash;</td><td>11.8</td><td>&mdash;</td><td>&mdash;</td><td>11.5</td></tr>
+                  <tr><td>ArtiBoost</td><td>&mdash;</td><td>&mdash;</td><td>12.8</td><td>&mdash;</td><td>10.8</td></tr>
+                  <tr><td>HandGCAT</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>9.1</td></tr>
+                  <tr><td>AMVUR</td><td>&mdash;</td><td>6.2</td><td>&mdash;</td><td>&mdash;</td><td>8.7</td></tr>
+                  <tr><td>SPMHand</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>8.6</td></tr>
+                  <tr><td>Hamba</td><td>&mdash;</td><td>5.7</td><td>&mdash;</td><td>&mdash;</td><td>6.9</td></tr>
+                  <tr><td>HandOS</td><td>&mdash;</td><td>5.0</td><td>&mdash;</td><td>5.2</td><td>6.8</td></tr>
+                  <tr class="is-selected"><td><strong>ScaleHP (Ours)</strong></td><td><strong>35.8</strong></td><td><strong>5.0</strong></td><td><strong>10.3</strong></td><td><strong>4.6</strong></td><td><strong>5.9</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="columns is-multiline ablation-tables" style="margin-top: 1.5rem;">
+              <div class="column is-half">
+                <h3 class="title is-5">Scale Token Ablation</h3>
+                <div class="table-container">
+                  <table class="table is-fullwidth is-striped results-table ablation-table">
+                    <thead>
+                      <tr>
+                        <th>Method</th>
+                        <th>FreiHand CS-MPJPE &darr;</th>
+                        <th>DexYCB CS-MPJPE &darr;</th>
+                        <th>HO3Dv3 CS-MPJPE &darr;</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>w/o Scale Token</td><td>44.3</td><td>40.2</td><td>42.0</td></tr>
+                      <tr class="is-selected"><td><strong>w/ Scale Token</strong></td><td><strong>35.8</strong></td><td><strong>30.0</strong></td><td><strong>33.4</strong></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="ablation-caption">CS-MPJPE (mm) on each benchmark. The scale token is critical for absolute metric recovery.</p>
+              </div>
+              <div class="column is-half">
+                <h3 class="title is-5">Depth-Axis Regularization</h3>
+                <div class="table-container">
+                  <table class="table is-fullwidth is-striped results-table ablation-table">
+                    <thead>
+                      <tr>
+                        <th>Method</th>
+                        <th>P-MPJPE &darr;</th>
+                        <th>X &darr;</th>
+                        <th>Y &darr;</th>
+                        <th>Z &darr;</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>w/o Scale Token</td><td>5.6</td><td>2.3</td><td>2.4</td><td>3.5</td></tr>
+                      <tr class="is-selected"><td><strong>w/ Scale Token</strong></td><td><strong>5.0</strong></td><td><strong>2.2</strong></td><td><strong>2.2</strong></td><td><strong>3.0</strong></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="ablation-caption">FreiHand aligned errors (mm). The scale token reduces depth-axis (Z) error most significantly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Videos -->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3 has-text-centered">Demo Videos</h2>
+          <p class="has-text-centered content is-size-6" style="margin-bottom: 1.5rem;">
+            Real-world demonstrations of ScaleHP estimating hand pose in true metric space from monocular RGB input.
+          </p>
+          <div id="demo-carousel" class="carousel results-carousel">
+            <div class="item">
+              <video class="demo-video" controls muted loop preload="metadata" playsinline>
+                <source src="static/videos/20260529-164124.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">Real-time metric hand pose estimation from a single camera view.</h2>
+            </div>
+            <div class="item">
+              <video class="demo-video" controls muted loop preload="metadata" playsinline poster="static/images/pick_poster.jpg">
+                <source src="static/videos/pick.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">Pick-and-place interaction demo with stable metric-scale hand tracking.</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qualitative Gallery -->
+    <section class="hero is-small is-light">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+
+          <h3 class="title is-4 has-text-centered subsection-title">FreiHand: Comparison with Camera-Space Methods</h3>
+          <p class="has-text-centered content is-size-6 subsection-intro">
+            Multi-method comparisons on the FreiHand evaluation set. Each plot overlays GT, ScaleHP, HandDGP, and CMR; top views reveal depth and scale errors in camera-space baselines.
+          </p>
+          <div class="qualitative-grid freihand-grid">
+            <div class="qualitative-sample">
+              <div class="qualitative-scroll">
+                <div class="qualitative-row freihand-row">
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/freihand_0010_input.png" alt="FreiHand input sample 0010" loading="lazy"/></div>
+                    <figcaption>Input</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/freihand_0010_metric.png" alt="FreiHand metric comparison sample 0010" loading="lazy"/></div>
+                    <figcaption>Metric Space</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/freihand_0010_top.png" alt="FreiHand top view comparison sample 0010" loading="lazy"/></div>
+                    <figcaption>Top View</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="qualitative-sample">
+              <div class="qualitative-scroll">
+                <div class="qualitative-row freihand-row">
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/freihand_0009_input.png" alt="FreiHand input sample 0009" loading="lazy"/></div>
+                    <figcaption>Input</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/freihand_0009_metric.png" alt="FreiHand metric comparison sample 0009" loading="lazy"/></div>
+                    <figcaption>Metric Space</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/freihand_0009_top.png" alt="FreiHand top view comparison sample 0009" loading="lazy"/></div>
+                    <figcaption>Top View</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="qualitative-sample">
+              <div class="qualitative-scroll">
+                <div class="qualitative-row freihand-row">
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/freihand_0008_input.png" alt="FreiHand input sample 0008" loading="lazy"/></div>
+                    <figcaption>Input</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/freihand_0008_metric.png" alt="FreiHand metric comparison sample 0008" loading="lazy"/></div>
+                    <figcaption>Metric Space</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/freihand_0008_top.png" alt="FreiHand top view comparison sample 0008" loading="lazy"/></div>
+                    <figcaption>Top View</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="title is-4 has-text-centered subsection-title">In-the-Wild Results</h3>
+          <p class="has-text-centered content is-size-6 subsection-intro">
+            Unconstrained real-world examples showing input images alongside metric-space reconstructions and multi-view renderings.
+          </p>
+          <div class="qualitative-grid">
+            <div class="qualitative-sample">
+              <div class="qualitative-scroll">
+                <div class="qualitative-row">
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/qualitative_1_input.jpg" alt="Input image 1" loading="lazy"/></div>
+                    <figcaption>Input</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/qualitative_1_metric.png" alt="Metric space result 1" loading="lazy"/></div>
+                    <figcaption>Metric Space</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/qualitative_1_front.png" alt="Front view result 1" loading="lazy"/></div>
+                    <figcaption>Front View</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/qualitative_1_top.png" alt="Top view result 1" loading="lazy"/></div>
+                    <figcaption>Top View</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <p class="qualitative-caption">Metric-space reconstruction with accurate image-plane projection.</p>
+            </div>
+            <div class="qualitative-sample">
+              <div class="qualitative-scroll">
+                <div class="qualitative-row">
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/qualitative_2_input.jpg" alt="Input image 2" loading="lazy"/></div>
+                    <figcaption>Input</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/qualitative_2_metric.png" alt="Metric space result 2" loading="lazy"/></div>
+                    <figcaption>Metric Space</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/qualitative_2_front.png" alt="Front view result 2" loading="lazy"/></div>
+                    <figcaption>Front View</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/qualitative_2_top.png" alt="Top view result 2" loading="lazy"/></div>
+                    <figcaption>Top View</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <p class="qualitative-caption">Robust pose under challenging hand-object interaction.</p>
+            </div>
+            <div class="qualitative-sample">
+              <div class="qualitative-scroll">
+                <div class="qualitative-row">
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/qualitative_3_input.jpg" alt="Input image 3" loading="lazy"/></div>
+                    <figcaption>Input</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/qualitative_3_metric.png" alt="Metric space result 3" loading="lazy"/></div>
+                    <figcaption>Metric Space</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/qualitative_3_front.png" alt="Front view result 3" loading="lazy"/></div>
+                    <figcaption>Front View</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/qualitative_3_top.png" alt="Top view result 3" loading="lazy"/></div>
+                    <figcaption>Top View</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <p class="qualitative-caption">Consistent 3D geometry across varying viewpoints.</p>
+            </div>
+            <div class="qualitative-sample">
+              <div class="qualitative-scroll">
+                <div class="qualitative-row">
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/qualitative_4_input.jpg" alt="Input image 4" loading="lazy"/></div>
+                    <figcaption>Input</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/qualitative_4_metric.png" alt="Metric space result 4" loading="lazy"/></div>
+                    <figcaption>Metric Space</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/qualitative_4_front.png" alt="Front view result 4" loading="lazy"/></div>
+                    <figcaption>Front View</figcaption>
+                  </figure>
+                  <figure class="qualitative-panel">
+                    <div class="panel-img-wrap"><img src="static/images/qualitative_4_top.png" alt="Top view result 4" loading="lazy"/></div>
+                    <figcaption>Top View</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <p class="qualitative-caption">Reliable metric localization under severe occlusion.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison vs HaMeR -->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3 has-text-centered">Comparison with HaMeR</h2>
+          <p class="has-text-centered content is-size-6" style="margin-bottom: 1.5rem;">
+            Metric-space 3D reconstructions compared against HaMeR on challenging in-the-wild samples. Top views highlight ScaleHP&rsquo;s clearer depth ordering.
+          </p>
+
+          <div class="comparison-block">
+            <div class="comparison-matrix">
+              <div class="comparison-matrix-header">
+                <div class="matrix-cell matrix-label"></div>
+                <div class="matrix-cell matrix-label">Input</div>
+                <div class="matrix-cell matrix-label">Metric Space</div>
+                <div class="matrix-cell matrix-label">Front View</div>
+                <div class="matrix-cell matrix-label">Top View</div>
+              </div>
+              <div class="comparison-matrix-row">
+                <div class="matrix-cell matrix-method">ScaleHP</div>
+                <figure class="comparison-panel">
+                  <div class="panel-img-wrap"><img src="static/images/compare_30_input.jpg" alt="Input image" loading="lazy"/></div>
+                </figure>
+                <figure class="comparison-panel">
+                  <div class="panel-img-wrap"><img src="static/images/compare_30_scalehp_metric.png" alt="ScaleHP metric space" loading="lazy"/></div>
+                </figure>
+                <figure class="comparison-panel">
+                  <div class="panel-img-wrap"><img src="static/images/compare_30_scalehp_front.png" alt="ScaleHP front view" loading="lazy"/></div>
+                </figure>
+                <figure class="comparison-panel">
+                  <div class="panel-img-wrap"><img src="static/images/compare_30_scalehp_top.png" alt="ScaleHP top view" loading="lazy"/></div>
+                </figure>
+              </div>
+              <div class="comparison-matrix-row">
+                <div class="matrix-cell matrix-method">HaMeR</div>
+                <figure class="comparison-panel">
+                  <div class="panel-img-wrap"><img src="static/images/compare_30_input.jpg" alt="Input image" loading="lazy"/></div>
+                </figure>
+                <figure class="comparison-panel">
+                  <div class="panel-img-wrap"><img src="static/images/compare_30_hamer_metric.png" alt="HaMeR metric space" loading="lazy"/></div>
+                </figure>
+                <figure class="comparison-panel">
+                  <div class="panel-img-wrap"><img src="static/images/compare_30_hamer_front.png" alt="HaMeR front view" loading="lazy"/></div>
+                </figure>
+                <figure class="comparison-panel">
+                  <div class="panel-img-wrap"><img src="static/images/compare_30_hamer_top.png" alt="HaMeR top view" loading="lazy"/></div>
+                </figure>
+              </div>
+            </div>
+            <p class="comparison-caption">ScaleHP preserves clearer metric depth ordering between interacting hands.</p>
+          </div>
+
+          <div class="comparison-block">
+            <div class="comparison-matrix">
+              <div class="comparison-matrix-header">
+                <div class="matrix-cell matrix-label"></div>
+                <div class="matrix-cell matrix-label">Input</div>
+                <div class="matrix-cell matrix-label">Metric Space</div>
+                <div class="matrix-cell matrix-label">Front View</div>
+                <div class="matrix-cell matrix-label">Top View</div>
+              </div>
+              <div class="comparison-matrix-row">
+                <div class="matrix-cell matrix-method">ScaleHP</div>
+                <figure class="comparison-panel">
+                  <div class="panel-img-wrap"><img src="static/images/compare_27_input.jpg" alt="Input image" loading="lazy"/></div>
+                </figure>
+                <figure class="comparison-panel">
+                  <div class="panel-img-wrap"><img src="static/images/compare_27_scalehp_metric.png" alt="ScaleHP metric space" loading="lazy"/></div>
+                </figure>
+                <figure class="comparison-panel">
+                  <div class="panel-img-wrap"><img src="static/images/compare_27_scalehp_front.png" alt="ScaleHP front view" loading="lazy"/></div>
+                </figure>
+                <figure class="comparison-panel">
+                  <div class="panel-img-wrap"><img src="static/images/compare_27_scalehp_top.png" alt="ScaleHP top view" loading="lazy"/></div>
+                </figure>
+              </div>
+              <div class="comparison-matrix-row">
+                <div class="matrix-cell matrix-method">HaMeR</div>
+                <figure class="comparison-panel">
+                  <div class="panel-img-wrap"><img src="static/images/compare_27_input.jpg" alt="Input image" loading="lazy"/></div>
+                </figure>
+                <figure class="comparison-panel">
+                  <div class="panel-img-wrap"><img src="static/images/compare_27_hamer_metric.png" alt="HaMeR metric space" loading="lazy"/></div>
+                </figure>
+                <figure class="comparison-panel">
+                  <div class="panel-img-wrap"><img src="static/images/compare_27_hamer_front.png" alt="HaMeR front view" loading="lazy"/></div>
+                </figure>
+                <figure class="comparison-panel">
+                  <div class="panel-img-wrap"><img src="static/images/compare_27_hamer_top.png" alt="HaMeR top view" loading="lazy"/></div>
+                </figure>
+              </div>
+            </div>
+            <p class="comparison-caption">More consistent absolute hand placement in camera space.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Downstream Application -->
+    <section class="section downstream-section" id="downstream-application">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3 has-text-centered">Downstream Application: Hand-to-Robot Retargeting</h2>
+
+            <div class="downstream-needs">
+              <h3 class="title is-5">Why Retargeting Requires Metric Hand Pose</h3>
+              <div class="content has-text-justified">
+                <p>
+                  Hand-to-robot retargeting maps human hand motion to robot end-effector trajectories for teleoperation and dexterous manipulation. This pipeline needs more than relative finger articulation: the robot must know where the hand sits in the shared camera or workspace frame and how large it is in real physical units.
+                </p>
+                <ul>
+                  <li><strong>Absolute 3D placement.</strong> Root-relative HPE only describes joint angles around a local origin; it cannot specify the hand&rsquo;s position relative to objects or the robot base.</li>
+                  <li><strong>Metric scale consistency.</strong> Without absolute hand size, human-to-robot mapping suffers scale drift, grasp offset, and depth-axis misalignment during motion transfer.</li>
+                  <li><strong>Robustness without external depth.</strong> Auxiliary depth modules or manual scale calibration break down when only the hand is visible or when deployment scenes differ from training data.</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="title is-5 has-text-centered" style="margin-top: 2rem;">How ScaleHP Addresses These Requirements</h3>
+            <div class="columns is-multiline downstream-benefits">
+              <div class="column is-one-third">
+                <div class="downstream-benefit-card">
+                  <h3 class="title is-5">Reliable Retargeting</h3>
+                  <p>Directly outputs camera-space poses at absolute metric scale, reducing depth ambiguity that causes grasp misalignment and unstable teleoperation.</p>
+                </div>
+              </div>
+              <div class="column is-one-third">
+                <div class="downstream-benefit-card">
+                  <h3 class="title is-5">Absolute Metric Scale</h3>
+                  <p>Recovers true hand dimensions in millimeters, preventing scale drift when transferring human motion to robot execution.</p>
+                </div>
+              </div>
+              <div class="column is-one-third">
+                <div class="downstream-benefit-card">
+                  <h3 class="title is-5">Camera-Space Coordinates</h3>
+                  <p>Predictions align naturally with the robot workspace, simplifying projection and inverse kinematics pipelines.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="downstream-video-wrap">
+              <video class="downstream-video" controls preload="metadata" playsinline>
+                <source src="static/videos/DownstreamApplication.mp4" type="video/mp4">
+              </video>
+            </div>
+            <p class="has-text-centered is-size-6" style="margin-top: 1rem; color: var(--text-secondary);">
+              Given the retargeting requirements above, ScaleHP metric pose enables stable hand-to-robot-arm mapping with significantly improved spatial consistency in real manipulation tasks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Summary</h2>
+            <div class="content has-text-justified">
+              <p>
+                ScaleHP introduces a transformer decoder with a dedicated scale token that fuses local joint morphology and global appearance through multi-scale deformable attention. Combined with a training-free perspective projection solver, it recovers absolute 3D hand geometry in a unified least-squares manner. The framework achieves state-of-the-art metric-space accuracy on FreiHand, DexYCB, and HO3Dv3 while generalizing robustly to unconstrained in-the-wild images.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
     <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>, adapted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- End youtube video -->
+  </footer>
 
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+</body>
+</html>
